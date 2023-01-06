@@ -1,0 +1,20 @@
+{
+  "name": "back",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "nodemon index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stylopm/tienda-guitarras-back.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stylopm/tienda-guitarras-back/issues"
+  },
+  "homepage": "https://github.com/stylopm/tienda-guitarras-back#readme"
+}
