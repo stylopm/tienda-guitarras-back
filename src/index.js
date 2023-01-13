@@ -1,6 +1,8 @@
 require('dotenv').config();
 const express = require('express');
+const cors = require('cors');
 const app = express();
+app.use(cors())
 app.listen( process.env.PORT, () => 
 {
     console.log('\x1b[34m ******************************************* \x1b[0m');
@@ -12,8 +14,9 @@ app.listen( process.env.PORT, () =>
 // localhost:5000/
 app.get('/', (req, res) => {
     res.send('Hola mundo');
-})
-
-
+});
 //Collections
-//Customers
+// localhost:5000/customers
+app.use('/customers', require('./routers/customers.routers'));
+// localhost:5000/shopping
+app.use('/shopping', require('./routers/shopping.routers'));
