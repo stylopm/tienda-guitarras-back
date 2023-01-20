@@ -1,29 +1,31 @@
+const Customer = require("./../models/customerSchema");
+const { msgFormatConst, respApi } = require("../helpers/helpers");
 
-const { msgFormatConst } = require('../helpers/helpers')
+const getCustomers = async (req, res) => {
+  const Customers = await Customer.find({});
+  msgFormatConst("getCustomers");
+  respApi(res, 'success', Customers)
+};
 
-const getCustomers = (req, res) => {
-    res.send('Estoy leyendo un usuario');
-    msgFormatConst('getCustomers');
-}
-
-const createCustomers = (req, res) => {
-    res.send('Estoy creador un usuario');
-    msgFormatConst('createCustomers');
-}
+const createCustomer = async (req, res) => {
+  const CustomerNew = await Customer.create(req.body);
+  msgFormatConst("createCustomers");
+  respApi(res, 'success', CustomerNew)
+};
 
 const updateCustomers = (req, res) => {
-    res.send('Estoy update un usuario');
-    msgFormatConst('updateCustomers');
-}
+  res.send("Estoy update un usuario");
+  msgFormatConst("updateCustomers");
+};
 
 const deleteCustomers = (req, res) => {
-    res.send('Estoy delete un usuario');
-    msgFormatConst('deleteCustomers');
-}
+  res.send("Estoy delete un usuario");
+  msgFormatConst("deleteCustomers");
+};
 
 module.exports = {
-    getCustomers,
-    createCustomers,
-    updateCustomers,
-    deleteCustomers
-}
+  getCustomers,
+  createCustomer,
+  updateCustomers,
+  deleteCustomers,
+};
